@@ -1,23 +1,49 @@
 /* Contenedor general */
 .home-container {
-  max-width: 1200px;
-  margin: 20px auto;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 0 15px;
 }
 
-/* Intro */
-.intro {
+/* Intro con imagen de fondo */
+.intro-with-bg {
+  position: relative;
+  background-image: url("https://chileestuyo.cl/wp-content/uploads/2015/07/Nevado_tres_cruces.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;          /* ocupa todo el ancho de la ventana */
+  margin-left: calc(-50vw + 50%); /* corrige la alineación centrada */
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  border-radius: 0px;
   margin-bottom: 40px;
 }
-.intro h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  color: #004080;
+
+.intro-with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* oscurece la imagen */
+  border-radius: 10px;
 }
-.intro p {
-  font-size: 16px;
-  color: #444;
+
+.intro-with-bg .overlay {
+  position: relative;
+  color: white;
+  max-width: 1500px;
+  padding: 20px;
+}
+
+.intro-with-bg h2 {
+  font-size: 50px;
+  margin-bottom: 120px;
+}
+
+.intro-with-bg p {
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -34,40 +60,30 @@
   gap: 15px;
 }
 .media-card {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  border-radius: 6px;
   display: flex;
   align-items: flex-end;
   padding: 10px;
   color: white;
   font-weight: bold;
+  text-decoration: none;   /* quita el subrayado */
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 .media-card span {
   background: rgba(0,0,0,0.6);
   padding: 6px 10px;
   border-radius: 4px;
 }
-.media-card a {
-  color: #00bfff;
-  margin-left: 5px;
-  text-decoration: underline;
+.media-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  filter: brightness(0.85); /* oscurece suavemente en hover */
 }
 .media-video iframe {
   border-radius: 6px;
-}
-
-/* Imagen principal */
-.main-image {
-  margin: 40px 0;
-  text-align: center;
-}
-.main-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 /* Noticias */
@@ -145,5 +161,18 @@
 @media (max-width: 768px) {
   .multimedia {
     grid-template-columns: 1fr;
+  }
+
+  .intro-with-bg {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .intro-with-bg h2 {
+    font-size: 22px;
+  }
+
+  .intro-with-bg p {
+    font-size: 14px;
   }
 }
