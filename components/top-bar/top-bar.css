@@ -4,18 +4,18 @@
   display: flex;
   justify-content: center;   /* centra horizontal */
   align-items: center;       /* centra vertical */
-  padding: 8px 0;
+  padding: 0;
   color: white;
 }
 
 .header-logo .logo-img {
-  height: 50px;
+  height: 250px;
   width: auto;
   margin-right: 12px;
 }
 
 .header-logo .logo-texto {
-  font-size: 18px;
+  font-size: 40px;
   font-weight: bold;
   color: white;
 }
