@@ -1,0 +1,80 @@
+<!-- Header: Logo + Texto -->
+<div class="header-logo">
+  <a href="https://www.copiapo.cl" target="_blank">
+    <img src="https://copiapo.cl/wp-content/uploads/2020/06/logo_muni-01-300x200.png"
+         alt="Logo Municipalidad"
+         class="logo-img" />
+  </a>
+  <span class="logo-texto">Ilustre Municipalidad de Copiapó</span>
+</div>
+
+<!-- Menú de navegación -->
+<header>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul id="menu">
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/alcalde">Alcalde</a></li>
+      <li><a href="https://copiapo.cl/index.php/concejo-municipal/">Concejo Municipal</a></li>
+      <li><a href="https://copiapo.cl/index.php/concursos-publicos/">Concursos</a></li>
+      <li><a href="https://copiapo.cl/index.php/cultura/">Cultura</a></li>
+      <li class="has-megamenu">
+        <a href="#">Direcciones</a>
+        <ul class="mega-menu">
+          <li><a href="https://copiapo.cl/index.php/adm-municipal/">Administración Municipal</a></li>
+          <li><a href="https://copiapo.cl/index.php/juzgados/">Juzgados Policía Local</a></li>
+          <li><a href="https://copiapo.cl/index.php/secpla/">Secretaría Comunal de Planificación</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-asesoria-juridica/">Dirección de Asesoría Jurídica</a></li>
+          <li><a href="https://copiapo.cl/index.php/secretaria-municipal/">Secretaría Municipal</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-finanzas/">Dirección de Finanzas</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-desarrollo-comunitario/">Dirección de Desarrollo Comunitario</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-transito/">Dirección de Tránsito</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-seguridad-publica/">Dirección de Seguridad Pública</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-obras/">Dirección de Obras</a></li>
+          <li><a href="https://copiapo.cl/index.php/salud/">Dirección de Salud</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-control/">Dirección de Control</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-medio-ambiente/">Dirección de Medio Ambiente</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-rrhh/">Dirección de Recursos Humanos</a></li>
+          <li><a href="https://copiapo.cl/index.php/direccion-de-operaciones/">Dirección de Operaciones</a></li>
+        </ul>
+      </li>
+      <li><a href="https://copiapo.cl/index.php/hoy-es-noticia/">Noticias</a></li>
+      <li class="has-megamenu">
+        <a href="#">Servicios en Línea</a>
+        <ul class="mega-menu">
+          <li><a href="https://copiapo.vecinodigital.cl/Vecino_Digital/">Pago Patente Comercial</a></li>
+          <li><a href="https://copiapo.vecinodigital.cl/Vecino_Digital/">Permiso de Circulación</a></li>
+          <li><a href="https://www.educacionvial.cl/">Examen de Conducción</a></li>
+          <li><a href="http://www2.copiapo.cl/Inicio/Menu.asp">Certificado de Cobranzas</a></li>
+          <li><a href="http://www4.copiapo.cl/Inicio/Archivos.asp">JPL2</a></li>
+
+        </ul>
+      </li>
+      <li><a href="https://copiapo.cl/index.php/contacto/">Teléfonos Municipales</a></li>
+    </ul>
+
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>Buscar</button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Toggle menú principal
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+
+  // Toggle submenús en móvil
+  document.querySelectorAll('.has-submenu > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open-submenu');
+      }
+    });
+  });
+</script>
